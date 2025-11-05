@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import React, { useEffect } from 'react';
+import Hero from './components/Hero';
+import BookDetails from './components/BookDetails';
+import Testimonials from './components/Testimonials';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  // Use a magic wand cursor for the whole page
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      :root { --cursor-url: url('data:image/svg+xml;utf8,${encodeURIComponent(
+        `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\">\n  <path fill=\"%23f97316\" d=\"M6 2l12 6-7 3-3 7z\"/>\n  <circle cx=\"19\" cy=\"5\" r=\"2\" fill=\"%23f97316\"/>\n</svg>`
+      )}'), auto; }
+      * { cursor: var(--cursor-url); }
+    `;
+    document.head.appendChild(style);
+    return () => { document.head.removeChild(style); };
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-[#0b0720] font-['Inter','Manrope',system-ui] text-white">
+      <Hero />
+      <BookDetails />
+      <Testimonials />
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
