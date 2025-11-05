@@ -26,8 +26,8 @@ export default function Hero() {
         <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-4 py-1 text-sm text-violet-200 backdrop-blur">
           Новая книга • Космическое сознание
         </span>
-        <h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-          I AM: Как Вселенная работает через нас
+        <h1 className="max-w-full whitespace-nowrap text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+          I AM Как Вселенная работает через нас
         </h1>
         <p className="mt-5 max-w-2xl text-base text-violet-100 sm:text-lg">
           Погрузись в путешествие к источнику сознания. Книга о том, как сверхразум
