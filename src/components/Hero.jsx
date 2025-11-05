@@ -2,67 +2,42 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 
 const paymentLinks = {
-  uah: '#', // Replace with your LiqPay/WayForPay/Fondy checkout link
-  paypal: 'https://www.paypal.me/', // Replace with your PayPal.me or hosted button link
-  venmo: 'https://venmo.com/', // Replace with your Venmo link or username
+  uah: '#',
+  paypal: '#',
+  venmo: '#',
 };
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] w-full overflow-hidden bg-[#0b0720]">
-      {/* Spline 3D Background */}
+    <section className="relative h-[90vh] min-h-[560px] w-full overflow-hidden">
       <div className="absolute inset-0">
-        <Spline
-          scene="https://prod.spline.design/er66D6jbuo0hIjmn/scene.splinecode"
-          style={{ width: '100%', height: '100%' }}
-        />
+        <Spline scene="https://prod.spline.design/5gqVbN0s8HfHf3Zy/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
-      {/* Soft gradient overlay to improve text contrast (doesn't block interaction) */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0b0720]/60 via-[#0b0720]/50 to-[#0b0720]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b0718]/20 via-[#0b0718]/60 to-[#0b0718] pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pt-28 pb-16 text-center text-white">
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-4 py-1 text-sm text-violet-200 backdrop-blur">
-          Новая книга • Космическое сознание
-        </span>
-        <h1 className="max-w-full whitespace-nowrap text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+      <div className="relative z-10 h-full max-w-5xl mx-auto px-6 flex flex-col items-center justify-center text-center">
+        <p className="text-violet-300/80 tracking-wide text-sm sm:text-base">Энергия сознания • Практики • Трансформация</p>
+        <h1 className="mt-3 font-semibold leading-tight text-3xl sm:text-4xl md:text-5xl">
           I AM: Как Вселенная работает через нас
         </h1>
-        <p className="mt-5 max-w-2xl text-base text-violet-100 sm:text-lg">
-          Погрузись в путешествие к источнику сознания. Книга о том, как сверхразум
-          проявляется через наши намерения, выбор и состояние присутствия.
+        <p className="mt-4 text-violet-200/80 max-w-3xl">
+          Современное руководство по осознанности и проявлению. Узнайте, как согласовать мысли и действия с потоком Вселенной и открыть новые уровни свободы и силы.
         </p>
 
-        {/* CTAs */}
-        <div className="mt-10 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
-          <a
-            href={paymentLinks.uah}
-            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3 font-semibold text-black shadow-lg shadow-orange-500/20 transition hover:translate-y-[-2px] hover:bg-orange-400"
-          >
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href={paymentLinks.uah} className="px-4 py-2 rounded-md bg-violet-500 hover:bg-violet-400 text-white shadow-lg shadow-violet-500/30 transition">
             Оплатить картой (UAH)
           </a>
-          <a
-            href={paymentLinks.paypal}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3 font-semibold text-black shadow-lg shadow-orange-500/20 transition hover:translate-y-[-2px] hover:bg-orange-400"
-          >
-            PayPal (EU)
+          <a href={paymentLinks.paypal} className="px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white backdrop-blur border border-white/10 transition">
+            PayPal
           </a>
-          <a
-            href={paymentLinks.venmo}
-            target="_blank"
-            rel="noreferrer"
-            className="group inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-5 py-3 font-semibold text-black shadow-lg shadow-orange-500/20 transition hover:translate-y-[-2px] hover:bg-orange-400"
-          >
-            Venmo (US)
+          <a href={paymentLinks.venmo} className="px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white backdrop-blur border border-white/10 transition">
+            Venmo
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-violet-200/80">
-          Моментальная электронная версия + доступ к обновлениям. Безопасная оплата.
-        </p>
+        <p className="mt-3 text-xs text-violet-200/60">Ссылки оплаты являются заглушками — замените на реальные URL</p>
       </div>
     </section>
   );

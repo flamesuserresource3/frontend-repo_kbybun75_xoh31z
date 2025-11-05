@@ -2,23 +2,18 @@ import React from 'react';
 import { Wand2 } from 'lucide-react';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="relative w-full bg-[#0b0720] pb-12 pt-10 text-white">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
-        <div className="flex items-center gap-2">
-          <Wand2 className="h-5 w-5 text-orange-400" />
-          <span className="font-semibold tracking-wide">I AM</span>
+    <footer className="py-12 border-t border-white/10 bg-black/20">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2 text-violet-200">
+          <Wand2 className="h-5 w-5" />
+          <span className="font-medium">I AM — книга</span>
         </div>
-        <p className="text-center text-sm text-violet-300">
-          © {new Date().getFullYear()} I AM. Все права защищены.
-        </p>
-        <div className="flex items-center gap-4">
-          <a href="#" className="text-sm text-violet-300 hover:text-orange-400">
-            Политика конфиденциальности
-          </a>
-          <a href="#" className="text-sm text-violet-300 hover:text-orange-400">
-            Контакты
-          </a>
+        <p className="text-sm text-violet-300/70">© {year}. Все права защищены.</p>
+        <div className="flex items-center gap-4 text-sm text-violet-300/70">
+          <a href="#" className="hover:text-white">Политика конфиденциальности</a>
+          <a href="#" className="hover:text-white">Контакты</a>
         </div>
       </div>
     </footer>
